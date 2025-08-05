@@ -342,7 +342,8 @@ export default function Page() {
                   Lancé en 2025 pour le hackathon Google Gemma 3n Impact
                   Challenge, irokolaw est né de la volonté d’offrir une
                   assistance juridique AI accessible en Afrique, notamment en
-                  Côte d'Ivoire, pour transformer l&apos;accès à la justice.
+                  Côte d&apos;Ivoire, pour transformer l&apos;accès à la
+                  justice.
                 </p>
                 <p className="text-muted-foreground md:text-xl/relaxed">
                   Notre approche allie intelligence artificielle, sécurité
