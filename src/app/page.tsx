@@ -10,7 +10,7 @@ import {
   TECHNOLOGIES,
 } from "@/lib/constant";
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Zap } from "lucide-react";
+import { ArrowRight, BookAIcon, Github, Linkedin, Zap } from "lucide-react";
 import Image from "next/image";
 
 const fadeIn = {
@@ -129,6 +129,19 @@ export default function Page() {
                     size="lg"
                   >
                     GitHub <Github className="h-5 w-5" />
+                  </Button>
+
+                  <Button
+                    onClick={() =>
+                      window.open(
+                        "https://handy-femur-303.notion.site/IROKOWLAW-TECHNICAL-WRITEUP-2479c5e38a0d8099b78ddd7598f7c0d7",
+                        "_blank"
+                      )
+                    }
+                    size="lg"
+                  >
+                    Docs
+                    <BookAIcon className="ml-2 h-4 w-4" />
                   </Button>
                 </motion.div>
               </motion.div>
