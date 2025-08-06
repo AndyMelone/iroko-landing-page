@@ -33,7 +33,7 @@ jobs:
           echo "Generated .env file:"
           cat .env
 
-      - name: Crete service Account json
+      - name: Create service Account json
         run: |
           echo "Creating service account JSON file"
           echo "${{ secrets.GCP_SA_KEY }}" | base64 --decode > gcp_sa_key.json
@@ -43,7 +43,7 @@ jobs:
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:
-          credentials_json: gcp_sa_key.json
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
           project_id: ${{ env.GCP_PROJECT_ID }}
           export_environment_variables: true
 
