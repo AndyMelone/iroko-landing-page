@@ -99,10 +99,7 @@ export default function Page() {
                 >
                   <Button
                     onClick={() =>
-                      window.open(
-                        "https://app.iroko-law-solutions.tech/",
-                        "_blank"
-                      )
+                      window.open("http://192.168.86.62:3000", "_blank")
                     }
                     size="lg"
                     className="group"
