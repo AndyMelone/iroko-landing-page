@@ -92,7 +92,7 @@ export default function Page() {
                     transition={{ duration: 0.7, delay: 0.2 }}
                     className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
                   >
-                    Empower your legal journey with{" "}
+                    Search less, Decide faster with{" "}
                     <span className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
                       irokolaw
                     </span>
@@ -103,9 +103,8 @@ export default function Page() {
                     transition={{ duration: 0.7, delay: 0.4 }}
                     className="max-w-[600px] text-muted-foreground md:text-xl"
                   >
-                    Our cutting-edge AI legal assistant, crafted for the Google
-                    Gemma 3n Impact Challenge hackathon, delivers secure, 24/7
-                    legal support and resource management.
+                    Find the right text, article, or decision in less than a
+                    minute. Save up to 10 hours per week on your legal research.
                   </motion.p>
                 </div>
                 <motion.div
@@ -212,7 +211,7 @@ export default function Page() {
                   transition={{ duration: 0.5 }}
                   className="inline-block rounded-3xl bg-muted px-3 py-1 text-sm"
                 >
-                  Fonctionnalités
+                  Features
                 </motion.div>
                 <motion.h2
                   initial={{ opacity: 0, y: 20 }}
@@ -220,7 +219,7 @@ export default function Page() {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
                 >
-                  Que propose irokolaw ?
+                  What does irokolaw offer?
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -228,9 +227,7 @@ export default function Page() {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   className="mx-auto max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
                 >
-                  irokolaw offre des fonctionnalités avancées pour répondre aux
-                  besoins juridiques, incluant une assistance AI 24/7, une
-                  gestion de cas et une sécurité robuste.
+                  We help legal professionals be more productive
                 </motion.p>
               </div>
             </div>
@@ -293,24 +290,6 @@ export default function Page() {
                       {service.description}
                     </p>
                   </div>
-                  <div className="mt-4 flex items-center justify-between">
-                    <Link
-                      href="#"
-                      className="text-sm font-medium text-primary underline-offset-4 hover:underline"
-                    >
-                      En savoir plus
-                    </Link>
-                    <motion.div
-                      whileHover={{ x: 5 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                    >
-                      <ArrowRight className="h-4 w-4 text-primary" />
-                    </motion.div>
-                  </div>
                 </motion.div>
               ))}
             </motion.div>
@@ -323,7 +302,7 @@ export default function Page() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeIn}
-            className="container px-4 md:px-6 border border-muted rounded-3xl"
+            className="container px-4 md:px-6 "
           >
             <div className="grid gap-3 lg:grid-cols-2 lg:gap-3">
               <motion.div
@@ -333,10 +312,10 @@ export default function Page() {
                 className="space-y-4 p-6"
               >
                 <div className="inline-block rounded-3xl bg-muted px-3 py-1 text-sm">
-                  Notre Mission
+                  Our Mission
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Notre Mission
+                  Laws for everyone
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed">
                   Lancé en 2025 pour le hackathon Google Gemma 3n Impact
@@ -385,28 +364,28 @@ export default function Page() {
               >
                 {[
                   {
-                    name: "Alex Johnson",
-                    role: "Creative Director",
+                    name: "Melone Andy",
+                    role: "Software Engineer",
                     img: "/logo.png",
                   },
                   {
-                    name: "Sam Taylor",
-                    role: "Lead Designer",
+                    name: "Sanga Ousmani",
+                    role: "Software Engineer",
                     img: "/logo.png",
                   },
                   {
-                    name: "Jordan Smith",
-                    role: "Senior Developer",
+                    name: "Hans Ariel",
+                    role: "Gen AI Engineer",
                     img: "/logo.png",
                   },
                   {
-                    name: "Casey Brown",
-                    role: "Project Manager",
+                    name: "Levi Yao",
+                    role: "AI Engineer",
                     img: "/logo.png",
                   },
                   {
-                    name: "Jamie Lee",
-                    role: "Marketing Specialist",
+                    name: "Elias Gbane",
+                    role: "Data Engineer",
                     img: "/logo.png",
                   },
                 ].map((member, index) => (
