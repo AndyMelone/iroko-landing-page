@@ -1,15 +1,18 @@
 "use client";
 
-import { MarqueeDemo } from "@/components/shared/marquee";
+import { LogoCarousel } from "@/components/shared/techno-carousel";
 import { NavBar } from "@/components/shared/tubelight-navbar";
 import { Button } from "@/components/ui/button";
-import { FEATURES, NAVBAR_ITEMS, TEAM_MEMBERS } from "@/lib/constant";
+import {
+  FEATURES,
+  NAVBAR_ITEMS,
+  TEAM_MEMBERS,
+  TECHNOLOGIES,
+} from "@/lib/constant";
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Zap } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
-// Animation variants
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -39,15 +42,6 @@ const itemFadeIn = {
 };
 
 export default function Page() {
-  const Technologies = [
-    // { name: "nest", logo: "/techno/nest-logo.png" },
-    { name: "next", logo: "/techno/nextjs-logo.png" },
-    { name: "docker", logo: "/techno/docker-logo.png" },
-    { name: "python", logo: "/techno/python-logo.png" },
-    { name: "gemma", logo: "/techno/gemma-logo.png" },
-    { name: "milvus", logo: "/techno/milvus-logo.png" },
-  ];
-
   return (
     <div>
       <NavBar items={NAVBAR_ITEMS} />
@@ -179,7 +173,7 @@ export default function Page() {
                   AI legal assistance.
                 </motion.p>
               </div>
-              <MarqueeDemo />
+              <LogoCarousel columnCount={3} logos={TECHNOLOGIES} />
             </div>
           </motion.div>
         </section>
@@ -238,7 +232,7 @@ export default function Page() {
                   <div className="relative space-y-3">
                     <service.icon className="mb-4 h-10 w-10 text-primary" />
                     <h3 className="text-xl font-bold">{service.title}</h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground line-clamp-2">
                       {service.description}
                     </p>
                   </div>
@@ -353,13 +347,13 @@ export default function Page() {
                         <p className="text-sm">{member.role}</p>
                       </div>
                       <div>
-                        <Link
-                          href={member.linkedin || "#"}
-                          target="_blank"
-                          className="absolute bottom-4 right-4 text-white hover:text-primary transition-colors cursor-pointer"
+                        <Button
+                          onClick={() => window.open(member.linkedin, "_blank")}
+                          variant={"link"}
+                          className="absolute bottom-4 right-4 cursor-pointer "
                         >
-                          <Linkedin />
-                        </Link>
+                          <Linkedin className="text-white hover:opacity-70" />
+                        </Button>
                       </div>
                     </div>
                   </motion.div>
@@ -370,7 +364,6 @@ export default function Page() {
         </section>
       </main>
 
-      {/* Footer */}
       <footer className="w-full border-t">
         <div className="border-t">
           <div className="container flex flex-col items-center justify-between gap-3 py-6 md:h-16 md:flex-row md:py-0">

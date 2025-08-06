@@ -1,4 +1,15 @@
 import {
+  GCPLogo,
+  GemmaLogo,
+  MilvusLogo,
+  NestJsLogo,
+  NextJSLogo,
+  OlamaLogo,
+  PostgreSQLLogo,
+  PythonLogo,
+  TypeScriptLogo,
+} from "@/components/shared/techno-logo";
+import {
   Home,
   User,
   Briefcase,
@@ -8,7 +19,7 @@ import {
   Gavel,
   MessageSquare,
   Shield,
-  Video,
+  BookOpen,
 } from "lucide-react";
 
 export type TeamMember = {
@@ -26,12 +37,18 @@ export type NavbarItem = {
   >;
 };
 
-export type feature = {
+export type Feature = {
   icon: React.ForwardRefExoticComponent<
     Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
   >;
   title: string;
   description: string;
+};
+
+export type Techno = {
+  name: string;
+  id: number;
+  img: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 };
 
 export const NAVBAR_ITEMS: NavbarItem[] = [
@@ -46,69 +63,80 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "Melone Andy",
     role: "Software Engineer",
     picture: "/team/melone.webp",
-    linkedin: "https://www.linkedin.com/in/melone-andy/",
+    linkedin: "https://www.linkedin.com/in/meloneandy/",
   },
   {
     name: "Sanga Ousmani",
     role: "Software Engineer",
     picture: "/team/sanga.webp",
-    linkedin: "https://www.linkedin.com/in/sanga-ousmani/",
+    linkedin: "https://www.linkedin.com/in/ousmanisanga/",
   },
   {
     name: "Hans Ariel",
-    role: "Gen AI Engineer",
-    picture: "/logo.png",
-    linkedin: "https://www.linkedin.com/in/hans-ariel/",
+    role: "Data Scientist | AI Engineer",
+    picture: "/team/hans.webp",
+    linkedin: "https://www.linkedin.com/in/hans-ariel-doh-59a31a2ba/",
   },
   {
     name: "Levi Yao",
     role: "AI Engineer",
     picture: "/team/levy.webp",
-    linkedin: "https://www.linkedin.com/in/levi-yao/",
+    linkedin: "https://www.linkedin.com/in/assale-levi-jonathan-yao/",
   },
   {
     name: "Elias Gbane",
     role: "Data Engineer",
-    picture: "/logo.png",
-    linkedin: "https://www.linkedin.com/in/elias-gbane/",
+    picture: "/team/elias.webp",
+    linkedin: "https://www.linkedin.com/in/desire-gbane-aa5a97231/",
   },
 ];
-
-export const FEATURES: feature[] = [
+export const FEATURES: Feature[] = [
   {
     icon: Gavel,
-    title: "Conseils Juridiques AI",
+    title: "AI Legal Advice",
     description:
-      "Obtenez des conseils juridiques instantanés et précis grâce à notre intelligence artificielle.",
+      "Get instant and accurate legal advice powered by our artificial intelligence.",
   },
   {
     icon: MessageSquare,
-    title: "Support 24/7",
+    title: "Conversational Chat Bot",
     description:
-      "Accédez à une assistance juridique en direct à tout moment via notre chat intégré.",
+      "Chat naturally with our legal assistant powered by Gemma 3 for instant responses.",
   },
   {
     icon: FileText,
-    title: "Analyse de Documents",
+    title: "Document Analysis",
     description:
-      "Automatisez l'analyse de vos documents juridiques pour une gestion efficace.",
+      "Automate the analysis of your legal documents for efficient management.",
+  },
+  {
+    icon: BookOpen,
+    title: "Legal Text Sources",
+    description:
+      "Access a comprehensive database of legal texts with automatic references and citations.",
   },
   {
     icon: Shield,
-    title: "Sécurité Renforcée",
+    title: "Automated Compliance",
     description:
-      "Protégez vos données avec un chiffrement de bout en bout et des contrôles d'accès.",
+      "Check your documents' compliance with current regulations in real time.",
   },
   {
     icon: Folder,
-    title: "Gestion de Cas",
+    title: "Case Management",
     description:
-      "Organisez et suivez vos affaires juridiques avec notre plateforme intuitive.",
+      "Organize and track your legal cases with an intuitive interface and automatic reminders.",
   },
-  {
-    icon: Video,
-    title: "Démonstration Vidéo",
-    description:
-      "Explorez les fonctionnalités via une démo vidéo dédiée au hackathon Google Gemma 3n.",
-  },
+];
+
+export const TECHNOLOGIES: Techno[] = [
+  { name: "Next Js", id: 1, img: NextJSLogo },
+  { name: "Nest.js", id: 2, img: NestJsLogo },
+  { name: "Type Script", id: 3, img: TypeScriptLogo },
+  { name: "Google Cloud Platform", id: 4, img: GCPLogo },
+  { name: "Gemma", id: 5, img: GemmaLogo },
+  { name: "PostgreSQL", id: 6, img: PostgreSQLLogo },
+  { name: "Milvus", id: 7, img: MilvusLogo },
+  { name: "Olama", id: 8, img: OlamaLogo },
+  { name: "Python", id: 9, img: PythonLogo },
 ];
