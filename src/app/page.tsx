@@ -342,16 +342,19 @@ export default function Page() {
                   Laws for everyone
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed">
-                  Lancé en 2025 pour le hackathon Google Gemma 3n Impact
-                  Challenge, irokolaw est né de la volonté d’offrir une
-                  assistance juridique AI accessible en Afrique, notamment en
-                  Côte d&apos;Ivoire, pour transformer l&apos;accès à la
-                  justice.
+                  IROKOLAW is revolutionizing access to law in French-speaking
+                  Africa. Imagine being able to search your country&apos;s
+                  entire legal corpus as easily as asking a question to an
+                  expert colleague. That&apos;s exactly what IROKOLAW offers: a
+                  legal intelligence platform that radically transforms the way
+                  you search through laws, case law, codes, and regulations.
                 </p>
                 <p className="text-muted-foreground md:text-xl/relaxed">
-                  Notre approche allie intelligence artificielle, sécurité
-                  robuste et expertise locale pour fournir des solutions
-                  juridiques efficaces et abordables.
+                  Legal professionals unanimously agree that legislative texts
+                  are scattered across dozens of different websites, traditional
+                  search engines drown out the essentials in thousands of
+                  irrelevant results, and legal monitoring becomes a
+                  time-consuming daily marathon.
                 </p>
               </motion.div>
               <motion.div
