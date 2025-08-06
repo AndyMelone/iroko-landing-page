@@ -5,18 +5,7 @@ import { NavBar } from "@/components/shared/tubelight-navbar";
 import { Button } from "@/components/ui/button";
 import { FEATURES, NAVBAR_ITEMS, TEAM_MEMBERS } from "@/lib/constant";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  FileText,
-  Folder,
-  Gavel,
-  Github,
-  Linkedin,
-  MessageSquare,
-  Shield,
-  Video,
-  Zap,
-} from "lucide-react";
+import { ArrowRight, Github, Linkedin, Zap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
