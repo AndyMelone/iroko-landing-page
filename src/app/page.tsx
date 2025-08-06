@@ -3,7 +3,7 @@
 import { MarqueeDemo } from "@/components/shared/marquee";
 import { NavBar } from "@/components/shared/tubelight-navbar";
 import { Button } from "@/components/ui/button";
-import { NAVBAR_ITEMS } from "@/lib/constant";
+import { FEATURES, NAVBAR_ITEMS, TEAM_MEMBERS } from "@/lib/constant";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -11,12 +11,14 @@ import {
   Folder,
   Gavel,
   Github,
+  Linkedin,
   MessageSquare,
   Shield,
   Video,
   Zap,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 // Animation variants
 const fadeIn = {
@@ -140,7 +142,7 @@ export default function Page() {
               >
                 <div className="relative h-[350px] w-full md:h-[450px] lg:h-[500px] xl:h-[550px] overflow-hidden rounded-3xl">
                   <Image
-                    src="/logo.png"
+                    src="/illustration.webp"
                     alt="Hero Image"
                     fill
                     className="object-cover"
@@ -176,7 +178,7 @@ export default function Page() {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
                 >
-                  Technologies intégrées
+                  Integrated technologies
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -184,14 +186,14 @@ export default function Page() {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
                 >
-                  Nous exploitons des technologies avancées pour offrir une
-                  assistance juridique AI performante et sécurisée.
+                  We use advanced technologies to offer high-performance, secure
+                  AI legal assistance.
                 </motion.p>
               </div>
+              <MarqueeDemo />
             </div>
           </motion.div>
         </section>
-        <MarqueeDemo />
 
         <section className="w-full py-8">
           <motion.div
@@ -217,7 +219,7 @@ export default function Page() {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
                 >
-                  What does irokolaw offer?
+                  What does irokolaw offer
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -236,44 +238,7 @@ export default function Page() {
               viewport={{ once: true }}
               className="mx-auto grid max-w-5xl items-center gap-3 py-12 md:grid-cols-2 lg:grid-cols-3"
             >
-              {[
-                {
-                  icon: <Gavel className="h-10 w-10 text-primary" />,
-                  title: "Conseils Juridiques AI",
-                  description:
-                    "Obtenez des conseils juridiques instantanés et précis grâce à notre intelligence artificielle.",
-                },
-                {
-                  icon: <MessageSquare className="h-10 w-10 text-primary" />,
-                  title: "Support 24/7",
-                  description:
-                    "Accédez à une assistance juridique en direct à tout moment via notre chat intégré.",
-                },
-                {
-                  icon: <FileText className="h-10 w-10 text-primary" />,
-                  title: "Analyse de Documents",
-                  description:
-                    "Automatisez l'analyse de vos documents juridiques pour une gestion efficace.",
-                },
-                {
-                  icon: <Shield className="h-10 w-10 text-primary" />,
-                  title: "Sécurité Renforcée",
-                  description:
-                    "Protégez vos données avec un chiffrement de bout en bout et des contrôles d'accès.",
-                },
-                {
-                  icon: <Folder className="h-10 w-10 text-primary" />,
-                  title: "Gestion de Cas",
-                  description:
-                    "Organisez et suivez vos affaires juridiques avec notre plateforme intuitive.",
-                },
-                {
-                  icon: <Video className="h-10 w-10 text-primary" />,
-                  title: "Démonstration Vidéo",
-                  description:
-                    "Explorez les fonctionnalités via une démo vidéo dédiée au hackathon Google Gemma 3n.",
-                },
-              ].map((service, index) => (
+              {FEATURES.map((service, index) => (
                 <motion.div
                   key={index}
                   variants={itemFadeIn}
@@ -282,7 +247,7 @@ export default function Page() {
                 >
                   <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-all duration-300"></div>
                   <div className="relative space-y-3">
-                    <div className="mb-4">{service.icon}</div>
+                    <service.icon className="mb-4 h-10 w-10 text-primary" />
                     <h3 className="text-xl font-bold">{service.title}</h3>
                     <p className="text-muted-foreground">
                       {service.description}
@@ -335,12 +300,32 @@ export default function Page() {
                 className="flex items-center justify-center"
               >
                 <div className="relative h-[350px] w-full md:h-[450px] lg:h-[500px] overflow-hidden rounded-3xl">
-                  <Image
-                    src="/logo.png"
-                    alt="Team Photo"
-                    fill
-                    className="object-cover"
-                  />
+                  <video
+                    className="mb-4 md:hidden  object-cover h-[350px]  md:h-[450px] lg:h-[500px] "
+                    controls
+                    autoPlay
+                    loop
+                    playsInline
+                  >
+                    <source
+                      src="https://video-previews.elements.envatousercontent.com/3a6bbaf3-e320-4fdc-b61a-bc36cbc52194/watermarked_preview/watermarked_preview.mp4"
+                      type="video/mp4"
+                    />
+                    Votre navigateur ne supporte pas la lecture de vidéos.
+                  </video>
+                  <video
+                    className="mb-4 object-cover w-full hidden md:block  h-[350px] md:h-[450px] lg:h-[500px] "
+                    controls
+                    autoPlay
+                    loop
+                    playsInline
+                  >
+                    <source
+                      src="https://video-previews.elements.envatousercontent.com/3a6bbaf3-e320-4fdc-b61a-bc36cbc52194/watermarked_preview/watermarked_preview.mp4"
+                      type="video/mp4"
+                    />
+                    Votre navigateur ne supporte pas la lecture de vidéos.
+                  </video>
                 </div>
               </motion.div>
             </div>
@@ -360,49 +345,33 @@ export default function Page() {
                 viewport={{ once: true }}
                 className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-3 "
               >
-                {[
-                  {
-                    name: "Melone Andy",
-                    role: "Software Engineer",
-                    img: "/logo.png",
-                  },
-                  {
-                    name: "Sanga Ousmani",
-                    role: "Software Engineer",
-                    img: "/logo.png",
-                  },
-                  {
-                    name: "Hans Ariel",
-                    role: "Gen AI Engineer",
-                    img: "/logo.png",
-                  },
-                  {
-                    name: "Levi Yao",
-                    role: "AI Engineer",
-                    img: "/logo.png",
-                  },
-                  {
-                    name: "Elias Gbane",
-                    role: "Data Engineer",
-                    img: "/logo.png",
-                  },
-                ].map((member, index) => (
+                {TEAM_MEMBERS.map((member, index) => (
                   <motion.div
                     key={index}
                     variants={itemFadeIn}
-                    whileHover={{ y: -10 }}
                     className="group relative overflow-hidden rounded-3xl"
                   >
                     <Image
-                      src={member.img}
+                      src={member.picture}
                       alt={member.name}
                       width={300}
                       height={400}
                       className="h-[300px] w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
-                      <h4 className="font-bold">{member.name}</h4>
-                      <p className="text-sm">{member.role}</p>
+                    <div className="flex justify-between items-center absolute inset-0 p-4">
+                      <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
+                        <h4 className="font-bold">{member.name}</h4>
+                        <p className="text-sm">{member.role}</p>
+                      </div>
+                      <div>
+                        <Link
+                          href={member.linkedin || "#"}
+                          target="_blank"
+                          className="absolute bottom-4 right-4 text-white hover:text-primary transition-colors cursor-pointer"
+                        >
+                          <Linkedin />
+                        </Link>
+                      </div>
                     </div>
                   </motion.div>
                 ))}
@@ -417,11 +386,10 @@ export default function Page() {
         <div className="border-t">
           <div className="container flex flex-col items-center justify-between gap-3 py-6 md:h-16 md:flex-row md:py-0">
             <p className="text-xs text-muted-foreground">
-              &copy; {new Date().getFullYear()} Design Studio. All rights
-              reserved.
+              &copy; {new Date().getFullYear()} Irokolaw. All rights reserved.
             </p>
             <p className="text-xs text-muted-foreground">
-              Crafted with passion in New York City
+              Built with ❤️ for the Google Gemma 3 AI Challenge{" "}
             </p>
           </div>
         </div>

@@ -3,17 +3,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-interface NavItem {
-  name: string;
-  url: string;
-  icon: LucideIcon;
-}
+import { NavbarItem } from "@/lib/constant";
 
 interface NavBarProps {
-  items: NavItem[];
+  items: NavbarItem[];
   className?: string;
 }
 
