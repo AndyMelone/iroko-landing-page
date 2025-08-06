@@ -77,7 +77,7 @@ Before running this application, make sure you have:
    Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
 
 
-![Landing Page](public/screenshots/landing-page.jpeg)
+![Landing Page](./public/screenshots/landing-page.jpeg)
 
 ## License
 
