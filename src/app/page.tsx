@@ -97,7 +97,16 @@ export default function Page() {
                   transition={{ duration: 0.7, delay: 0.6 }}
                   className="flex flex-col gap-3 sm:flex-row"
                 >
-                  <Button size="lg" className="group">
+                  <Button
+                    onClick={() =>
+                      window.open(
+                        "https://app.iroko-law-solutions.tech/",
+                        "_blank"
+                      )
+                    }
+                    size="lg"
+                    className="group"
+                  >
                     Try it now
                     <motion.span
                       initial={{ x: 0 }}
@@ -112,7 +121,13 @@ export default function Page() {
                     </motion.span>
                   </Button>
 
-                  <Button variant="default" size="lg">
+                  <Button
+                    onClick={() =>
+                      window.open("https://github.com/IrokoLaw", "_blank")
+                    }
+                    variant="default"
+                    size="lg"
+                  >
                     GitHub <Github className="h-5 w-5" />
                   </Button>
                 </motion.div>
