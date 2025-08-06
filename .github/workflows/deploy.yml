@@ -38,7 +38,7 @@ jobs:
           echo "Creating service account JSON file"
           echo "${{ secrets.GCP_SA_KEY }}" | base64 --decode > gcp_sa_key.json
           echo "Service account JSON file created"
-          cat gcp_sa_key.json || echo "Failed to create service account JSON file"
+          echo gcp_sa_key.json || echo "Failed to create service account JSON file"
 
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
