@@ -1,36 +1,184 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏛️ IrokoLaw - AI-Powered Legal Assistant
 
-## Getting Started
+> **Hackathon Project**: Built for Google's Gemma 3 AI Challenge
 
-First, run the development server:
+IrokoLaw is an innovative legal technology platform that leverages Google's Gemma 3 AI model to provide intelligent legal assistance, document analysis, and automated legal workflows for law firms and legal professionals.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![IrokoLaw Landing Page](./public/screenshots/landing-page.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌟 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🤖 AI-Powered Legal Analysis
+- **Document Review**: Automated analysis of legal documents using Gemma 3
+- **Contract Analysis**: Intelligent contract review and risk assessment
+- **Legal Research**: AI-assisted legal research and case law analysis
+- **Compliance Checking**: Automated compliance verification
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 💼 Professional Tools
+- **Case Management**: Streamlined case tracking and management
+- **Client Portal**: Secure client communication and document sharing
+- **Billing Integration**: Automated time tracking and billing
+- **Document Generation**: AI-powered legal document creation
 
-## Learn More
+### 🔒 Security & Compliance
+- **Bank-level Security**: Enterprise-grade encryption and security
+- **GDPR Compliant**: Full compliance with data protection regulations
+- **Audit Trail**: Complete activity logging and audit capabilities
+- **Role-based Access**: Granular permission management
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Frontend**: Next.js 15, React 19, TypeScript
+- **Styling**: Tailwind CSS 4, Framer Motion
+- **AI Integration**: Google Gemma 3 API
+- **Icons**: Lucide React
+- **Deployment**: Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📋 Prerequisites
 
-## Deploy on Vercel
+Before running this application, make sure you have:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Node.js** 18.0 or higher
+- **npm** or **yarn** package manager
+- **Google Gemma 3 API Key** (for AI features)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Installation
+
+1. **Clone the repository**
+   \`\`\`bash
+   git clone https://github.com/yourusername/iroko-law.git
+   cd iroko-law
+   \`\`\`
+
+2. **Install dependencies**
+   \`\`\`bash
+   npm install
+   # or
+   yarn install
+   \`\`\`
+
+3. **Environment Setup**
+   
+   Create a \`.env.local\` file in the root directory:
+   \`\`\`env
+   # Google Gemma 3 API Configuration
+   GEMMA_API_KEY=your_gemma_api_key_here
+   GEMMA_API_URL=https://api.gemma.google.com/v1
+   
+   # Next.js Configuration
+   NEXT_PUBLIC_APP_URL=http://localhost:3000
+   NEXT_PUBLIC_APP_NAME=IrokoLaw
+   
+   # Database (if applicable)
+   DATABASE_URL=your_database_url_here
+   \`\`\`
+
+4. **Run the development server**
+   \`\`\`bash
+   npm run dev
+   # or
+   yarn dev
+   \`\`\`
+
+5. **Open your browser**
+   
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
+
+## 🎯 Usage
+
+### For Law Firms
+1. **Sign up** for an IrokoLaw account
+2. **Upload legal documents** for AI analysis
+3. **Review AI insights** and recommendations
+4. **Generate reports** and legal documents
+5. **Manage cases** and client communications
+
+### For Legal Professionals
+1. **Access the dashboard** after authentication
+2. **Use AI research tools** for case preparation
+3. **Analyze contracts** with Gemma 3 AI
+4. **Track billable hours** automatically
+5. **Collaborate** with team members
+
+## 📸 Screenshots
+
+### Landing Page
+![Landing Page](./public/screenshots/landing-page.png)
+
+### Dashboard
+![Dashboard](./public/screenshots/dashboard.png)
+
+### AI Document Analysis
+![AI Analysis](./public/screenshots/ai-analysis.png)
+
+## 🏆 Hackathon Information
+
+**Event**: Google Gemma 3 AI Challenge  
+**Theme**: Innovative AI Applications  
+**Duration**: [Hackathon Duration]  
+**Team**: [Your Team Name]  
+
+### Key Innovations
+- Integration of Gemma 3 for legal document analysis
+- Real-time AI-powered legal insights
+- Automated compliance checking
+- Intelligent case management
+
+## 🚀 Deployment
+
+### Deploy on Vercel (Recommended)
+
+1. **Connect your repository** to Vercel
+2. **Set environment variables** in Vercel dashboard
+3. **Deploy** with one click
+
+\`\`\`bash
+npm run build
+npm run start
+\`\`\`
+
+### Deploy on Other Platforms
+
+The application can be deployed on any platform that supports Next.js:
+- **Netlify**
+- **AWS Amplify**
+- **Google Cloud Platform**
+- **Azure Static Web Apps**
+
+## 🤝 Contributing
+
+We welcome contributions to IrokoLaw! Please follow these steps:
+
+1. **Fork** the repository
+2. **Create** a feature branch (\`git checkout -b feature/amazing-feature\`)
+3. **Commit** your changes (\`git commit -m 'Add amazing feature'\`)
+4. **Push** to the branch (\`git push origin feature/amazing-feature\`)
+5. **Open** a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **Google** for organizing the Gemma 3 AI Challenge
+- **Gemma 3 Team** for providing the powerful AI model
+- **Open Source Community** for the amazing tools and libraries
+- **Legal Professionals** who provided valuable feedback
+
+## 📞 Contact
+
+**Project Maintainer**: [Your Name]  
+**Email**: [your.email@example.com]  
+**LinkedIn**: [Your LinkedIn Profile]  
+**Twitter**: [@yourusername]
+
+## 🔗 Links
+
+- **Live Demo**: [https://iroko-law.vercel.app](https://iroko-law.vercel.app)
+- **Documentation**: [https://docs.iroko-law.com](https://docs.iroko-law.com)
+- **API Reference**: [https://api.iroko-law.com/docs](https://api.iroko-law.com/docs)
+
+---
+
+**Built with ❤️ for the Google Gemma 3 AI Challenge**

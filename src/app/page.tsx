@@ -1,23 +1,22 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
+import { MarqueeDemo } from "@/components/shared/marquee";
+import { NavBar } from "@/components/shared/tubelight-navbar";
+import { Button } from "@/components/ui/button";
+import { NAVBAR_ITEMS } from "@/lib/constant";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Zap,
-  MessageSquare,
-  Github,
   FileText,
   Folder,
   Gavel,
+  Github,
+  MessageSquare,
   Shield,
   Video,
+  Zap,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { NavBar } from "@/components/shared/tubelight-navbar";
-import { NAVBAR_ITEMS } from "@/lib/constant";
-import { MarqueeDemo } from "@/components/shared/marquee";
+import Image from "next/image";
 
 // Animation variants
 const fadeIn = {
@@ -190,10 +189,9 @@ export default function Page() {
                 </motion.p>
               </div>
             </div>
-
-            <MarqueeDemo />
           </motion.div>
         </section>
+        <MarqueeDemo />
 
         <section className="w-full py-8">
           <motion.div
