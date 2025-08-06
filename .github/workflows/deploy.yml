@@ -3,25 +3,22 @@ name: Deploy to Google Cloud Run
 on:
   push:
     branches:
-      - main # Déclenche le workflow lors d'un push sur la branche 'main'
+      - mains
 
 env:
-  GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }} # L'ID de votre projet Google Cloud
-  GCP_REGION: ${{ secrets.GCP_REGION }} # La région choisie pour le déploiement
-  GCP_SERVICE_NAME: ${{ secrets.GCP_SERVICE_NAME }} # Le nom de votre service Cloud Run
-  ARTIFACT_REGISTRY_REPO: iroko # Le nom du dépôt dans Artifact Registry
-  SECRETS_BASE64: ${{ secrets.SECRETS_BASE64_DEV }} # Contenu base64-encodé de votre fichier .env
-  SERVICE_ACCOUNT_EMAIL: ${{ secrets.SERVICE_ACCOUNT_EMAIL }} # Email du compte de service pour l'exécution Cloud Run (optionnel)
-
-  # Le nom complet de l'image Docker pour Artifact Registry, défini une seule fois ici
-  IMAGE_FULL_NAME: ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT_ID }}/${{ env.ARTIFACT_REGISTRY_REPO }}/${{ env.GCP_SERVICE_NAME }}:${{ github.sha }}
+  GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  GCP_REGION: ${{ secrets.GCP_REGION }}
+  GCP_SERVICE_NAME: ${{ secrets.GCP_SERVICE_NAME }}
+  ARTIFACT_REGISTRY_REPO: iroko
+  SECRETS_BASE64: ${{ secrets.SECRETS_BASE64_DEV }}
+  SERVICE_ACCOUNT_EMAIL: ${{ secrets.SERVICE_ACCOUNT_EMAIL }}
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: "read"
-      id-token: "write" # Nécessaire pour l'authentification OIDC avec GCP
+      id-token: "write"
 
     steps:
       - name: Checkout code
@@ -31,7 +28,7 @@ jobs:
         run: |
           echo "${{ env.SECRETS_BASE64 }}" | base64 --decode > .env
           echo "Generated .env file:"
-          cat .env # Affiche le contenu du .env pour le débogage (à retirer en production si sensible)
+          cat .env
 
       - name: Google Auth
         id: auth
@@ -54,7 +51,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ env.IMAGE_FULL_NAME }} # Utilise la variable IMAGE_FULL_NAME
+          tags: ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT_ID }}/${{ env.ARTIFACT_REGISTRY_REPO }}/${{ env.GCP_SERVICE_NAME }}:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -63,15 +60,13 @@ jobs:
         uses: google-github-actions/deploy-cloudrun@v2
         with:
           service: ${{ env.GCP_SERVICE_NAME }}
-          image: ${{ env.IMAGE_FULL_NAME }} # Utilise la variable IMAGE_FULL_NAME
+          image: ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT_ID }}/${{ env.ARTIFACT_REGISTRY_REPO }}/${{ env.GCP_SERVICE_NAME }}:${{ github.sha }}
           region: ${{ env.GCP_REGION }}
           allow_unauthenticated: true
           port: 3000
           timeout: 3600
           labels: |
             commit-sha=${{ github.sha }}
-          # Décommentez la ligne ci-dessous si vous souhaitez spécifier un compte de service
-          # pour l'exécution de votre application Cloud Run (différent de celui utilisé pour le déploiement)
           # service_account_email: ${{ env.SERVICE_ACCOUNT_EMAIL }}
 
       - name: Show Cloud Run URL
