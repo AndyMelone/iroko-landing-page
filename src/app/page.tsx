@@ -294,7 +294,7 @@ export default function Page() {
                       src="https://video-previews.elements.envatousercontent.com/3a6bbaf3-e320-4fdc-b61a-bc36cbc52194/watermarked_preview/watermarked_preview.mp4"
                       type="video/mp4"
                     />
-                    Votre navigateur ne supporte pas la lecture de vidéos.
+                    This navigator does not support the video tag.
                   </video>
                   <video
                     className="mb-4 object-cover w-full hidden md:block  h-[350px] md:h-[450px] lg:h-[500px] "
@@ -307,7 +307,7 @@ export default function Page() {
                       src="https://video-previews.elements.envatousercontent.com/3a6bbaf3-e320-4fdc-b61a-bc36cbc52194/watermarked_preview/watermarked_preview.mp4"
                       type="video/mp4"
                     />
-                    Votre navigateur ne supporte pas la lecture de vidéos.
+                    This navigator does not support the video tag.
                   </video>
                 </div>
               </motion.div>
