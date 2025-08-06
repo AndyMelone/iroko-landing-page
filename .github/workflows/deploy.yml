@@ -1,4 +1,4 @@
-name: BUILD AND DEPLOY TODO APP
+name: BUILD AND DEPLOY IROKO LANDING PAGE
 
 on:
   push:
@@ -33,10 +33,17 @@ jobs:
           echo "Generated .env file:"
           cat .env
 
+      - name: Crete service Account json
+        run: |
+          echo "Creating service account JSON file"
+          echo "${{ secrets.GCP_SA_KEY }}" | base64 --decode > gcp_sa_key.json
+          echo "Service account JSON file created"
+          cat gcp_sa_key.json || echo "Failed to create service account JSON file"
+
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:
-          credentials_json: ${{ secrets.GCP_SA_KEY }}
+          credentials_json: gcp_sa_key.json
           project_id: ${{ env.GCP_PROJECT_ID }}
           export_environment_variables: true
 
