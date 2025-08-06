@@ -38,7 +38,9 @@ docker push us-central1-docker.pkg.dev/iroko-468113/iroko/iroko-landing-page:$TA
 
 # Deploy to Cloud Run with environment variables from .env.production
 echo "🚀 Deploying to Cloud Run with tag: $TAG"
+
 gcloud run deploy iroko-landing-page \
+    --project=iroko-468113 \
     --image us-central1-docker.pkg.dev/iroko-468113/iroko/iroko-landing-page:$TAG \
     --region us-central1 \
     --platform managed \

@@ -178,6 +178,56 @@ export default function Page() {
           </motion.div>
         </section>
 
+        <section className="">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center py-10">
+            <div className="space-y-3">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="inline-block rounded-3xl bg-muted px-3 py-1 text-sm"
+              >
+                architecture
+              </motion.div>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+              >
+                Architecture Overview
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+              >
+                This architecture diagram illustrates the key components and
+                interactions within the irokolaw system, showcasing how we
+                leverage AI
+              </motion.p>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              variants={fadeIn}
+              className="container px-4 md:px-6 py-12"
+            >
+              <Image
+                src="/architecture.png"
+                alt="Architecture Diagram"
+                width={1200}
+                height={800}
+                className="w-full  object-cover"
+                priority
+              />
+            </motion.div>
+          </div>
+        </section>
+
         <section className="w-full py-8">
           <motion.div
             initial="hidden"
